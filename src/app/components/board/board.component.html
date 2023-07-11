@@ -1,0 +1,14 @@
+<div class=" bg-slate-700 p-10 h-screen w-screen flex">
+    <div *ngFor="let board of boards" class="border h-4/5 rounded text-white w-72 m-5">
+        <h1 class="bg-slate-500 p-3 rounded">{{board.boardName}}</h1>
+    </div>
+    <div *ngIf="!isShowing" class="add-icon bg-slate-200 w-fit h-fit m-5 rounded cursor-pointer" (click)="isShowing = !isShowing">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+    </div>
+    <div *ngIf="isShowing"  class="rounded w-72 m-5 h-4/5">
+        <input (keydown.enter)="addBoard($event)" (keydown.escape)="isShowing = !isShowing" class="p-3 h-14 rounded outline-none bg-slate-500 w-full text-white text-lg" type="text" placeholder="Enter board name">
+    </div>
+</div>
