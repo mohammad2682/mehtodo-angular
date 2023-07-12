@@ -16,4 +16,12 @@ export class BoardService {
   getBoards(): Observable<any> {
     return this._http.get('http://localhost:3000/boards');
   }
+
+  updateBoard(id: number, data: any): Observable<any> {
+    return this._http.put(`http://localhost:3000/boards/${id}`, data);
+  }
+
+  deleteBoard(id: number): Observable<any> {
+    return this._http.delete(`http://localhost:3000/boards/${id}`);
+  }
 }

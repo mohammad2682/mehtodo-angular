@@ -2,7 +2,20 @@
   "boards": [
     {
       "boardName": "Board 1",
-      "id": "RpaDA8H"
+      "showMenu": false,
+      "id": 1,
+      "taskList": [
+        {
+          "taskName": "test",
+          "showMenu": false,
+          "id": 1
+        }
+      ]
+    },
+    {
+      "boardName": "Board 2",
+      "showMenu": false,
+      "id": 2
     }
   ]
 }

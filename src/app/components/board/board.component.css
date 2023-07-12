@@ -1,0 +1,11 @@
+.board-header h1{
+    margin: 0;
+}
+
+.board-actions{
+    opacity: 0;
+}
+
+.board-actions:hover{
+    opacity: 1;
+}

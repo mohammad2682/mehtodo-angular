@@ -1,6 +1,20 @@
-<div class=" bg-slate-700 p-10 h-screen w-screen flex">
-    <div *ngFor="let board of boards" class="border h-4/5 rounded text-white w-72 m-5">
-        <h1 class="bg-slate-500 p-3 rounded">{{board.boardName}}</h1>
+<div class=" bg-slate-400 p-10 h-screen w-screen flex">
+    <div *ngFor="let board of boards" class="bg-slate-500 h-4/5 rounded text-white w-72 m-5">
+        <div class="flex align-middle justify-between rounded-t border-b border-slate-400 board-header p-1">
+            <h1 class="p-3">{{board.boardName}}</h1>
+            <div class="bg-slate-600 cursor-pointer rounded w-fit h-fit mt-1 mx-1 board-actions" (click)="board.showMenu = !board.showMenu">
+                <p class="px-3 text-2xl">...</p>
+                <ul class="bg-slate-600 p-3 mt-1 rounded" style="position: absolute" *ngIf="board.showMenu">
+                    <li class="hover:bg-slate-500 rounded px-2" (click)="isEditing = !isEditing">
+                        Edit
+                    </li>
+                    <li class="hover:bg-slate-500 rounded px-2" (click)="deleteBoard(board.id)">
+                        Delete
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <app-add-task [boardId]="board.id"></app-add-task>
     </div>
     <div *ngIf="!isShowing" class="add-icon bg-slate-200 w-fit h-fit m-5 rounded cursor-pointer" (click)="isShowing = !isShowing">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -8,7 +22,24 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
         </svg>
     </div>
-    <div *ngIf="isShowing"  class="rounded w-72 m-5 h-4/5">
-        <input (keydown.enter)="addBoard($event)" (keydown.escape)="isShowing = !isShowing" class="p-3 h-14 rounded outline-none bg-slate-500 w-full text-white text-lg" type="text" placeholder="Enter board name">
+    <div *ngIf="isShowing"  class="rounded w-72 m-5 h-4/5 bg-slate-500">
+        <input [(ngModel)]="newBoardName" (keydown.enter)="addBoard()" (keydown.escape)="isShowing = !isShowing" class="p-3 border-b border-slate-400 h-16 rounded-t outline-none bg-slate-500 w-full text-white text-lg" type="text" placeholder="Enter board name">
+        <div class="flex justify-end space-x-0 mx-3 mt-1">
+            <div class=" bg-slate-200 w-fit h-fit m-2 rounded cursor-pointer"
+                (click)="addBoard()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+
+            </div>
+            <div class=" bg-slate-200 w-fit h-fit m-2 rounded cursor-pointer"
+                (click)="isShowing = !isShowing">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+        </div>
     </div>
 </div>
