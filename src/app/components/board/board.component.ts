@@ -63,6 +63,7 @@ export class BoardComponent implements OnInit {
     const newBoard: Board = {
       boardName: this.newBoardName,
       showMenu: false,
+      taskList: [],
     };
     this._boardService.addBoard(newBoard).subscribe({
       next: (val: any) => {

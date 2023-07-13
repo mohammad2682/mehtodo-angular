@@ -11,9 +11,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, BoardComponent, AddTaskComponent],
+  declarations: [AppComponent, HomeComponent, BoardComponent, AddTaskComponent, TaskListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

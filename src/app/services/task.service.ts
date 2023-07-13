@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Task } from 'src/types';
+import { Board, Task } from 'src/types';
 
 @Injectable({
   providedIn: 'root',
@@ -9,11 +9,11 @@ import { Task } from 'src/types';
 export class TaskService {
   constructor(private _http: HttpClient) {}
 
-  addTask(id: any, data: Task): Observable<any> {
-    return this._http.post(`http://localhost:3000/boards/${id}/taskList`, data);
+  addTask(id: any, data: Board): Observable<any> {
+    return this._http.put(`http://localhost:3000/boards/${id}`, data);
   }
 
-  getTasks(): Observable<any> {
-    return this._http.get('http://localhost:3000/boards');
+  getTaskList(id: any): Observable<any> {
+    return this._http.get(`http://localhost:3000/boards/${id}`);
   }
 }

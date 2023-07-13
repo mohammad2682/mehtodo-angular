@@ -1,21 +1,57 @@
 {
   "boards": [
     {
-      "boardName": "Board 1",
+      "boardName": "todo",
       "showMenu": false,
-      "id": 1,
       "taskList": [
         {
-          "taskName": "test",
-          "showMenu": false,
-          "id": 1
+          "taskName": "task",
+          "showMenu": false
+        },
+        {
+          "taskName": "task 3",
+          "showMenu": true
+        },
+        {
+          "taskName": "task 2",
+          "showMenu": true
+        },
+        {
+          "taskName": "task1",
+          "showMenu": false
         }
-      ]
+      ],
+      "id": 1
     },
     {
-      "boardName": "Board 2",
+      "boardName": "In progress",
       "showMenu": false,
+      "taskList": [
+        {
+          "taskName": "task 6",
+          "showMenu": false
+        },
+        {
+          "taskName": "task 4",
+          "showMenu": false
+        }
+      ],
       "id": 2
+    },
+    {
+      "boardName": "Done",
+      "showMenu": false,
+      "taskList": [
+        {
+          "taskName": "task 700",
+          "showMenu": false
+        },
+        {
+          "taskName": "task 600",
+          "showMenu": false
+        }
+      ],
+      "id": 3
     }
   ]
 }
