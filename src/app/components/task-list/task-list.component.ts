@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Board } from 'src/types';
+import { Task } from 'src/types';
 
 @Component({
   selector: 'app-task-list',
@@ -7,5 +7,7 @@ import { Board } from 'src/types';
   styleUrls: ['./task-list.component.css'],
 })
 export class TaskListComponent {
-  @Input() board: Board = {} as Board;
+  @Input() taskList: any = {} as Task;
+  @Input() boardId: number;
+  showingTaskList: any;
 }

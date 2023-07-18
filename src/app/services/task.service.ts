@@ -9,11 +9,11 @@ import { Board, Task } from 'src/types';
 export class TaskService {
   constructor(private _http: HttpClient) {}
 
-  addTask(id: any, data: Board): Observable<any> {
-    return this._http.put(`http://localhost:3000/boards/${id}`, data);
+  addTask(data: Task): Observable<any> {
+    return this._http.post(`http://localhost:3000/tasks`, data);
   }
 
   getTaskList(id: any): Observable<any> {
-    return this._http.get(`http://localhost:3000/boards/${id}`);
+    return this._http.get(`http://localhost:3000/tasks?boardId=` + id);
   }
 }

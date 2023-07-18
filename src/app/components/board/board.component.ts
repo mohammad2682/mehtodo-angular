@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BoardService } from 'src/app/services/board.service';
 import { CoreService } from 'src/app/core/core.service';
 import { Board } from 'src/types';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-board',
@@ -15,6 +14,7 @@ export class BoardComponent implements OnInit {
   isEditing: boolean = false;
   boards: any;
   newBoardName: any;
+  taskList: any;
 
   constructor(
     private _boardService: BoardService,
@@ -46,6 +46,7 @@ export class BoardComponent implements OnInit {
   }
 
   deleteBoard(id: number) {
+    this._boardService.deleteTasksinBoard(id);
     this._boardService.deleteBoard(id).subscribe({
       next: (res) => {
         this._coreService.openSnackBar('Board deleted successfully!', 'Ok');
@@ -63,7 +64,6 @@ export class BoardComponent implements OnInit {
     const newBoard: Board = {
       boardName: this.newBoardName,
       showMenu: false,
-      taskList: [],
     };
     this._boardService.addBoard(newBoard).subscribe({
       next: (val: any) => {

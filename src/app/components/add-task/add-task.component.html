@@ -1,4 +1,4 @@
-<app-task-list [board]="board"></app-task-list>
+<app-task-list [taskList]="taskList" [boardId]="boardId"></app-task-list>
 <div *ngIf="!addingTask" class="add-icon bg-slate-200 w-fit h-fit m-5 rounded cursor-pointer text-black "
     (click)="addingTask = !addingTask">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"

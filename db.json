@@ -1,57 +1,52 @@
 {
   "boards": [
     {
-      "boardName": "todo",
+      "boardName": "Todo",
       "showMenu": false,
-      "taskList": [
-        {
-          "taskName": "task",
-          "showMenu": false
-        },
-        {
-          "taskName": "task 3",
-          "showMenu": true
-        },
-        {
-          "taskName": "task 2",
-          "showMenu": true
-        },
-        {
-          "taskName": "task1",
-          "showMenu": false
-        }
-      ],
       "id": 1
-    },
-    {
-      "boardName": "In progress",
-      "showMenu": false,
-      "taskList": [
-        {
-          "taskName": "task 6",
-          "showMenu": false
-        },
-        {
-          "taskName": "task 4",
-          "showMenu": false
-        }
-      ],
-      "id": 2
     },
     {
       "boardName": "Done",
       "showMenu": false,
-      "taskList": [
-        {
-          "taskName": "task 700",
-          "showMenu": false
-        },
-        {
-          "taskName": "task 600",
-          "showMenu": false
-        }
-      ],
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "taskName": "task 1",
+      "showMenu": false,
+      "boardId": 1,
+      "id": 1
+    },
+    {
+      "taskName": "task 2",
+      "showMenu": false,
+      "boardId": 2,
+      "id": 2
+    },
+    {
+      "taskName": "task 3",
+      "showMenu": false,
+      "boardId": 1,
       "id": 3
+    },
+    {
+      "taskName": "task 4",
+      "showMenu": false,
+      "boardId": 1,
+      "id": 4
+    },
+    {
+      "taskName": "task 4",
+      "showMenu": false,
+      "boardId": 2,
+      "id": 5
+    },
+    {
+      "taskName": "task 5",
+      "showMenu": false,
+      "boardId": 1,
+      "id": 6
     }
   ]
 }

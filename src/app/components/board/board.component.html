@@ -14,7 +14,7 @@
                 </ul>
             </div>
         </div>
-        <app-add-task [boardId]="board.id" [board]="board"></app-add-task>
+        <app-add-task [boardId]="board.id"></app-add-task>
     </div>
     <div *ngIf="!isShowing" class="add-icon bg-slate-200 w-fit h-fit m-5 rounded cursor-pointer" (click)="isShowing = !isShowing">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
