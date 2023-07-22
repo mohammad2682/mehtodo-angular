@@ -24,6 +24,15 @@ export class AddTaskComponent {
     this.getTaskList();
   }
 
+  deleteTask(id: number) {
+    this._taskService.deleteTask(id).subscribe({
+      next: (res) => {
+        this._coreService.openSnackBar('Task deleted successfully!', 'Ok');
+        this.getTaskList();
+      },
+    });
+  }
+
   getTaskList() {
     this._taskService.getTaskList(this.boardId).subscribe({
       next: (res) => {

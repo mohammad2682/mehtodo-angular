@@ -1,0 +1,9 @@
+<div class="bg-rose-50">
+    <h2 mat-dialog-title>{{ data.title }}</h2>
+    <div mat-dialog-content>{{ data.message }}</div>
+    <div mat-dialog-actions>
+        <button mat-button class="rounded py-2 px-6 ms-4 bg-gray-300 font-medium" (click)="onCancel()">Cancel</button>
+        <button mat-button class="rounded py-2 px-6 ms-4 bg-rose-700 font-medium text-white"
+            (click)="onConfirm()">Confirm</button>
+    </div>
+</div>

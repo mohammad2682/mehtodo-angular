@@ -16,4 +16,7 @@ export class TaskService {
   getTaskList(id: any): Observable<any> {
     return this._http.get(`http://localhost:3000/tasks?boardId=` + id);
   }
+  deleteTask(id: any): Observable<any> {
+    return this._http.delete(`http://localhost:3000/tasks/${id}`);
+  }
 }

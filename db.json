@@ -6,24 +6,22 @@
       "id": 1
     },
     {
-      "boardName": "Done",
+      "boardName": "In progress",
       "showMenu": false,
       "id": 2
+    },
+    {
+      "boardName": "Review",
+      "showMenu": false,
+      "id": 3
+    },
+    {
+      "boardName": "Done",
+      "showMenu": false,
+      "id": 4
     }
   ],
   "tasks": [
-    {
-      "taskName": "task 1",
-      "showMenu": false,
-      "boardId": 1,
-      "id": 1
-    },
-    {
-      "taskName": "task 2",
-      "showMenu": false,
-      "boardId": 2,
-      "id": 2
-    },
     {
       "taskName": "task 3",
       "showMenu": false,
@@ -35,18 +33,6 @@
       "showMenu": false,
       "boardId": 1,
       "id": 4
-    },
-    {
-      "taskName": "task 4",
-      "showMenu": false,
-      "boardId": 2,
-      "id": 5
-    },
-    {
-      "taskName": "task 5",
-      "showMenu": false,
-      "boardId": 1,
-      "id": 6
     }
   ]
 }

@@ -1,4 +1,4 @@
-<app-task-list [taskList]="taskList" [boardId]="boardId"></app-task-list>
+<app-task-list (deleteSingleTask)="deleteTask($event)"  [taskList]="taskList" [boardId]="boardId"></app-task-list>
 <div *ngIf="!addingTask" class="add-icon bg-slate-200 w-fit h-fit m-5 rounded cursor-pointer text-black "
     (click)="addingTask = !addingTask">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -7,9 +7,9 @@
     </svg>
 </div>
 
-<div *ngIf="addingTask" class="rounded m-5 bg-slate-700 text-black">
+<div *ngIf="addingTask" class="rounded m-5 bg-slate-800 text-black">
     <input [(ngModel)]="newTaskName" (keydown.enter)="addTask()" (keydown.escape)="addingTask = !addingTask"
-        class="p-3 border-b border-slate-500 h-16 rounded-t outline-none bg-slate-700 w-full text-white text-lg"
+        class="p-3 border-b border-slate-500 h-16 rounded-t outline-none bg-slate-800 w-full text-white text-lg"
         type="text" placeholder="Enter new task">
     <div class="flex justify-end space-x-0 mx-3 mt-1">
         <div class=" bg-slate-200 w-fit h-fit m-2 rounded cursor-pointer" (click)="addTask()">
